@@ -162,19 +162,20 @@ resource "null_resource" "configure-cat-wiki" {
     }
   }
 
-  provisioner "file" {
-    source  = "requirements.txt"  # local public key
-    destination  = "/tmp/requirements.txt"  # will copy to remote VM as /tmp/test.pub
-  }
+
 
   provisioner "remote-exec" {
     inline = [
       "sudo rm /var/lib/apt/lists/partial/*",
       "sudo apt-get -y update ",
+      "sudo apt install gh",
       "sudo apt-get -y install python3.6",
       "sudo apt-get -y install python3-pip",
       "sudo pip3 install virtualenv",
       "sleep 15",
+      "sudo cd /tmp",
+      "sudo gh repo clone Rodi26/aws-wiki",
+      "sudo cd /tmp/aws-wiki",
       "sudo pip3 install -r /tmp/requirements.txt",
       "sudo  mkdocs serve",
  
