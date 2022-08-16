@@ -162,6 +162,11 @@ resource "null_resource" "configure-cat-wiki" {
     }
   }
 
+    provisioner "file" {
+    source  = "requirements.txt"  # local public key
+    destination  = "/tmp/requirements.txt"  # will copy to remote VM as /tmp/test.pub
+  }
+
   provisioner "remote-exec" {
     inline = [
       "sudo rm /var/lib/apt/lists/partial/*",
@@ -170,7 +175,7 @@ resource "null_resource" "configure-cat-wiki" {
       "sudo apt-get -y install python3-pip",
       "sudo pip3 install virtualenv",
       "sleep 15",
-      "sudo pip3 install -r ../requirements.txt",
+      "sudo pip3 install -r /tmp/requirements.txt",
       "sudo  mkdocs serve",
  
     ]
