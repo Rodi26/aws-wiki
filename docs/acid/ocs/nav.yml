@@ -1,0 +1,3 @@
+- Create an OCS VM using DIN: ocs.md
+- Deploy a white application using terraform and ansible: white_app.md
+- Deploy your own application using terraform and ansible: own_app.md

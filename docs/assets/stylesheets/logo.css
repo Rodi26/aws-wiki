@@ -1,0 +1,7 @@
+.md-header__button.md-logo {
+    padding: 0;
+}
+
+.md-header__button.md-logo > img {
+    width: fit-content;
+}

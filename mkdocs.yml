@@ -1,0 +1,169 @@
+# Site Name
+site_name: ACID Documentation
+# Copyright
+copyright: Copyright &copy; 2022 Anywhere With CI/CD
+
+theme:
+  # Global Theme to use 
+  # And template render modifications
+  name: material
+  custom_dir: overrides/
+
+  # ACID Logo and favicon
+  logo: assets/images/acid-logo-text.svg
+  favicon: assets/images/acid-logo-bio.svg
+  font:
+    text: Rubik
+    code: Rubik Mono
+  # highlightjs: true
+
+  # Admonition icons
+  icon:
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+  
+  # Site color pallette based on systeme preference
+  palette:
+    - media: "(prefers-color-scheme: light)" 
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)" 
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  # Site Extra features
+  features:
+    - content.code.annotate
+    - content.tooltips
+    # - navigation.instant
+    - navigation.top
+    - navigation.indexes
+    - navigation.prune
+    - navigation.tracking
+
+use_directory_urls: false
+
+# Extra plugins
+plugins:
+  - navincluder
+  - section-index
+  - table-reader
+  - macros
+  - search
+  - mike
+  - git-revision-date-localized
+  - minify:
+      minify_html: true
+      htmlmin_opts:
+        pre_attr: 'no-minify-data'
+
+# Markdown extentions 
+markdown_extensions:
+  - admonition
+  - extra
+  # - lightgallery
+  - markdown_include.include:
+      base_path: docs
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true
+
+# Custom CSS to override default ones
+extra_css:
+  # --> Gris & Cards
+  - assets/stylesheets/cards.css
+  - assets/stylesheets/grids.css
+  # --> Custom Theme
+  # - assets/stylesheets/light-theme.css
+  - assets/stylesheets/dark-theme.css
+  - assets/stylesheets/logo.css
+  # --> DataTables
+  - assets/stylesheets/jquery-ui.css
+  - assets/stylesheets/dataTables.jqueryui.min.css
+  - assets/stylesheets/datatables.extras.css
+  # --> Images & Videos
+  - assets/stylesheets/better_images.css
+  - assets/stylesheets/better_videos.css
+  - assets/stylesheets/simpleLightbox.min.css
+
+# Custom JS to expand functionalities
+extra_javascript:
+  # --> DataTables & CSV processing
+  - assets/javascripts/jquery-3.6.0.min.js
+  - assets/javascripts/downloadTablesToCsv.js
+  - assets/javascripts/extraCopyButtonInTable.js
+  - assets/javascripts/jquery.dataTables.min.js
+  - assets/javascripts/dataTables.jqueryui.min.js
+  - assets/javascripts/fetchCsvOnS3.js
+  - assets/javascripts/marked.min.js
+  # --> Matomo
+  - assets/javascripts/matomo.js
+  # --> Images & Videos
+  - assets/javascripts/better_images.js
+  - assets/javascripts/better_videos.js
+  - assets/javascripts/simpleLightbox.min.js
+  # --> Chart.js
+  - assets/javascripts/chart.min.js
+  - assets/javascripts/chart.js
+  - assets/javascripts/grids.js
+
+# Extra config for conditional template rendering 
+# and version provider for easy switch
+extra:
+  version:
+    provider: mike
+  wide_pages:
+    - Docker images
+    - CI Docker images
+    - CMF Report
+    - Migration report
+
+
+# Setup Documentation navigation
+repo_url: https://sgithub.fr.world.socgen/dds-itf-acid
+repo_name: ACID Git
+
+nav:
+  - 📖 Getting Started: "index.md"
+  - 🔖 Changelog: "changelog/changelog.md"
+  - 🔐 Credentials: "@include acid/credentials/nav.yml"
+  - 🌀 CI Bricks: "@include acid/ci/nav.yml"
+  - 🚀 CD Bricks: "@include acid/cd/nav.yml"
+  - 🛸 Terraform Bricks: "@include acid/terraform/nav.yml"
+  - 🔮 Ansible Bricks: "@include acid/ansible/nav.yml"
+  - 💎 Extras: "@include acid/extras/nav.yml"
+  - 🐋 Docker: "@include acid/docker/nav.yml"
+  - 🐳 K8S Blueprints: "@include acid/k8s/nav.yml"
+  - 🐬 OCS Blueprints: "@include acid/ocs/nav.yml"
+  - 📚 Hands-on: "acid/handson/handson.md"
+  - 👷 Onboardings: "@include acid/onboardings/nav.yml"
+  - 👷 Migrations: "@include acid/migrations/nav.yml"
+  - 📘 Tools: "@include acid/tools/nav.yml"
+  - 📧 Contacts: "acid/contacts/contacts.md"
+  - 👾 Contribute: "@include acid/contribute/nav.yml"
+  - 💬 FAQ: "@include acid/faq/nav.yml"

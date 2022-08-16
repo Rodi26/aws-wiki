@@ -1,0 +1,10 @@
+- ci.md
+- Code Checkout: checkout.md
+- Automatic Version Retrieval: auto_version_retrieval.md
+- Build / Test: build_test.md
+- Sonar Analysis: sonarqube_analysis.md
+- Sonar Quality Gate: sonar_quality_gate.md
+- Checkmarx: checkmarx.md
+- Build Docker Image: build_docker_image.md
+- Push Docker Image: push_docker_image.md
+- Trigger CD pipeline from CI job: auto_cd.md

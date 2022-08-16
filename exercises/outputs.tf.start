@@ -1,4 +1,4 @@
 # Outputs file
-#output "catapp_url" {
-#  value = "http://${aws_instance.hashicat.public_dns}"
+#output "url" {
+#  value = "http://${aws_instance.wiki.public_dns}"
 #}

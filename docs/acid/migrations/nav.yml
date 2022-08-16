@@ -1,0 +1,7 @@
+- Openshift to Docker EE:
+  - o2d.md
+  - Migration OpenShift - Docker EE Prerequisite: prerequisite.md
+  - Migration report: report.md
+- Cloud Migration Factory:
+  - CMF Prerequisite: cmf_prerequisite.md
+  - CMF Report: cmf_report.md
