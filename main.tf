@@ -166,7 +166,7 @@ resource "null_resource" "configure-cat-app" {
     inline = [
       "sudo apt-get update",
       "sudo apt-get install python3.6",
-      "apt-get install python3-pip"
+      "apt-get install python3-pip",
       "sudo  python3 -m pip3 install virtualenv",
       "sleep 15",
       "sudo pip install -r ../requirements.txt",
