@@ -164,12 +164,13 @@ resource "null_resource" "configure-cat-wiki" {
 
   provisioner "remote-exec" {
     inline = [
+      "sudo rm /var/lib/apt/lists/partial/*",
       "sudo apt-get -y update ",
       "sudo apt-get -y install python3.6",
       "sudo apt-get -y install python3-pip",
       "sudo  python3 -m pip3 install virtualenv",
       "sleep 15",
-      "sudo pip install -y -r ../requirements.txt",
+      "sudo pip3 install -y -r ../requirements.txt",
       "sudo  mkdocs serve",
  
     ]
