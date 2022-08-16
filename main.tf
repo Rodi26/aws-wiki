@@ -143,7 +143,7 @@ resource "aws_instance" "wiki" {
 # Set up some environment variables for our script.
 # Add execute permissions to our scripts.
 # Run the deploy_app.sh script.
-resource "null_resource" "configure-app-wiki2" {
+resource "null_resource" "configure-app-wiki3" {
   depends_on = [aws_eip_association.wiki]
 
   triggers = {
