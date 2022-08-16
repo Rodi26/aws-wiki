@@ -143,7 +143,7 @@ resource "aws_instance" "wiki" {
 # Set up some environment variables for our script.
 # Add execute permissions to our scripts.
 # Run the deploy_app.sh script.
-resource "null_resource" "configure-cat-app" {
+resource "null_resource" "configure-cat-wiki" {
   depends_on = [aws_eip_association.wiki]
 
   triggers = {
@@ -166,7 +166,7 @@ resource "null_resource" "configure-cat-app" {
     inline = [
       "sudo apt-get update",
       "sudo apt-get install python3.6",
-      "apt-get install python3-pip",
+      "sudo apt-get install python3-pip",
       "sudo  python3 -m pip3 install virtualenv",
       "sleep 15",
       "sudo pip install -r ../requirements.txt",
