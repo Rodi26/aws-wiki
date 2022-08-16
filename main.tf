@@ -175,7 +175,7 @@ resource "null_resource" "configure-cat-wiki" {
       "sudo pip3 install virtualenv",
       "sleep 15",
       "cd /tmp",
-      "sudo git clone Rodi26/aws-wiki",
+      "sudo git clone https://github.com/Rodi26/aws-wiki",
       "cd /tmp/aws-wiki",
       "sudo pip3 install -r requirements.txt",
       "sudo  mkdocs serve"
