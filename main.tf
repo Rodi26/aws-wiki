@@ -162,7 +162,7 @@ resource "null_resource" "configure-cat-wiki" {
     }
   }
 
-    provisioner "file" {
+  provisioner "file" {
     source  = "requirements.txt"  # local public key
     destination  = "/tmp/requirements.txt"  # will copy to remote VM as /tmp/test.pub
   }
