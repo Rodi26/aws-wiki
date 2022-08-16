@@ -168,14 +168,14 @@ resource "null_resource" "configure-cat-wiki" {
     inline = [
       "sudo rm /var/lib/apt/lists/partial/*",
       "sudo apt-get -y update ",
-      "sudo apt install gh",
+      "sudo apt-get -y install gh",
       "sudo apt-get -y install python3.6",
       "sudo apt-get -y install python3-pip",
       "sudo pip3 install virtualenv",
       "sleep 15",
-      "sudo cd /tmp",
+      "cd /tmp",
       "sudo gh repo clone Rodi26/aws-wiki",
-      "sudo cd /tmp/aws-wiki",
+      "cd /tmp/aws-wiki",
       "sudo pip3 install -r /tmp/requirements.txt",
       "sudo  mkdocs serve",
  
