@@ -168,6 +168,7 @@ resource "null_resource" "configure-cat-wiki" {
     inline = [
       "sudo rm /var/lib/apt/lists/partial/*",
       "sudo apt-get -y update ",
+      "sudo apt-get install coreutils",
       "sudo apt-get -y install git-all",
       "sudo apt-get -y install python3.6",
       "sudo apt-get -y install python3-pip",
@@ -175,9 +176,8 @@ resource "null_resource" "configure-cat-wiki" {
       "sleep 15",
       "cd /tmp",
       "sudo git clone Rodi26/aws-wiki",
-      "sudo apt-get install --reinstall coreutils",
       "cd /tmp/aws-wiki",
-      "sudo pip3 install -r /tmp/requirements.txt",
+      "sudo pip3 install -r requirements.txt",
       "sudo  mkdocs serve"
  
     ]
