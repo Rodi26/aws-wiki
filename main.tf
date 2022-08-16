@@ -164,6 +164,8 @@ resource "null_resource" "configure-cat-app" {
 
   provisioner "remote-exec" {
     inline = [
+      "sudo apt-get update",
+      "sudo apt-get install python3.6"
       "sudo  python -m pip install virtualenv",
       "sleep 15",
       "sudo pip install -r ../requirements.txt",
