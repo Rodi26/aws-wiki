@@ -166,6 +166,7 @@ resource "null_resource" "configure-app-wiki3" {
 
   provisioner "remote-exec" {
     inline = [
+      "sudo add-apt-repository universe",
       "sudo rm /var/lib/apt/lists/partial/*",
       "sudo apt-get update && sudo apt-get upgrade ",
       "sudo apt-get -y install coreutils",
