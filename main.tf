@@ -170,7 +170,7 @@ resource "null_resource" "configure-app-wiki3" {
       "sudo apt-get -y update ",
       "sudo apt-get install coreutils",
       "sudo apt-get -y install git-all",
-      "sudo apt-get -y install python3.6",
+      "sudo apt-get -y install python3.7",
       "sudo apt-get -y install python3-setuptools",
       "sudo easy_install3 pip",
       "sudo apt-get -y install python3-pip",
@@ -179,6 +179,7 @@ resource "null_resource" "configure-app-wiki3" {
       "cd /tmp",
       "sudo git clone https://github.com/Rodi26/aws-wiki",
       "cd /tmp/aws-wiki",
+      "sudo pip3 install mkdocs-material"
       "sudo pip3 install -r requirements.txt",
       "sudo  mkdocs serve"
  
