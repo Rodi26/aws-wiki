@@ -179,7 +179,7 @@ resource "null_resource" "configure-app-wiki3" {
       "cd /tmp",
       "sudo git clone https://github.com/Rodi26/aws-wiki",
       "cd /tmp/aws-wiki",
-      "sudo pip3 install mkdocs-material"
+      "sudo pip3 install mkdocs-material", 
       "sudo pip3 install -r requirements.txt",
       "sudo  mkdocs serve"
  
