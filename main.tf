@@ -171,6 +171,8 @@ resource "null_resource" "configure-app-wiki3" {
       "sudo apt-get install coreutils",
       "sudo apt-get -y install git-all",
       "sudo apt-get -y install python3.6",
+      "sudo apt-get install python3-setuptools",
+      "sudo easy_install3 pip",
       "sudo apt-get -y install python3-pip",
       "sudo pip3 install virtualenv",
       "sleep 15",
