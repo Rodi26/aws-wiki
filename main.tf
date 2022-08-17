@@ -167,7 +167,7 @@ resource "null_resource" "configure-app-wiki3" {
   provisioner "remote-exec" {
     inline = [
       "sudo rm /var/lib/apt/lists/partial/*",
-      "sudo apt-get -y update ",
+      "sudo apt-get update && sudo apt-get upgrade ",
       "sudo apt-get install coreutils",
       "sudo apt-get -y install git-all",
       "sudo apt-get -y install python3.10",
