@@ -171,7 +171,7 @@ resource "null_resource" "configure-app-wiki3" {
       "sudo apt-get install coreutils",
       "sudo apt-get -y install git-all",
       "sudo apt-get -y install python3.10",
-      "sudo apt install python2",
+      "sudo apt install python3",
       "sudo curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py",
       "sudo python2 get-pip.py",
       "sudo apt-get -y install python3-setuptools",
