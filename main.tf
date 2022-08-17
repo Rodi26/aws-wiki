@@ -96,8 +96,8 @@ data "aws_ami" "ubuntu" {
 
   filter {
     name = "name"
-    #values = ["ubuntu/images/hvm-ssd/ubuntu-disco-19.04-amd64-server-*"]
-    values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
+    values = ["ubuntu/images/hvm-ssd/ubuntu-disco-19.04-amd64-server-*"]
+    #values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
   }
 
   filter {
@@ -177,13 +177,13 @@ resource "null_resource" "configure-app-wiki3" {
       "sudo apt-get -y install python3-setuptools",
       "sudo easy_install3 pip",
       "sudo apt-get -y install python3-pip",
-      "sudo pip2 install virtualenv",
+      "sudo pip3 install virtualenv",
       "sleep 15",
       "cd /tmp",
       "sudo git clone https://github.com/Rodi26/aws-wiki",
       "cd /tmp/aws-wiki",
-      #"sudo pip3 install mkdocs-material", 
-      "sudo pip2 install -r requirements.txt",
+      "sudo pip3 install mkdocs-material", 
+      "sudo pip3 install -r requirements.txt",
       "sudo  mkdocs serve"
  
     ]
