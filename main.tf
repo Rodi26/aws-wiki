@@ -166,16 +166,12 @@ resource "null_resource" "configure-app-wiki3" {
 
   provisioner "remote-exec" {
     inline = [
-      "sudo add-apt-repository universe",
       "sudo rm /var/lib/apt/lists/partial/*",
       "sudo apt-get update && sudo apt-get upgrade ",
       "sudo apt-get -y install coreutils",
       "sudo apt-get -y install git-all",
-      "sudo apt-get -y install python3",
-      #"sudo apt install python2",
-      #"sudo curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py",
-      #"sudo python2 get-pip.py",
       "sudo apt-get -y install python3-setuptools",
+      "sudo apt-get -y install python3.10",
       "sudo easy_install3 pip",
       "sudo apt-get -y install python3-pip",
       "sudo pip3 install virtualenv",
