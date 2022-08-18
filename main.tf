@@ -98,7 +98,7 @@ data "aws_ami" "centos" {
     name = "name"
     #values = ["ubuntu/images/hvm-ssd/ubuntu-disco-19.04-amd64-server-*"]
     #values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
-    values = [CentOS Linux 7 x86_64 HVM EBS *]
+    values = ["CentOS Linux 7 x86_64 HVM EBS *"]
   }
 
   w  filter {
