@@ -91,13 +91,24 @@ resource "aws_route_table_association" "wiki" {
   route_table_id = aws_route_table.wiki.id
 }
 
-data "aws_ami" "ubuntu" {
+data "aws_ami" "centos" {
   most_recent = true
 
   filter {
     name = "name"
     #values = ["ubuntu/images/hvm-ssd/ubuntu-disco-19.04-amd64-server-*"]
-    values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
+    #values = ["ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"]
+    values = [CentOS Linux 7 x86_64 HVM EBS *]
+  }
+
+  w  filter {
+    name   = "architecture"
+    values = ["x86_64"]
+  }
+
+  filter {
+    name   = "root-device-type"
+    values = ["ebs"]
   }
 
   filter {
@@ -119,7 +130,7 @@ resource "aws_eip_association" "wiki" {
 }
 
 resource "aws_instance" "wiki" {
-  ami                         = data.aws_ami.ubuntu.id
+  ami                         = data.aws_ami.centos.id
   instance_type               = var.instance_type
   key_name                    = aws_key_pair.wiki.key_name
   associate_public_ip_address = true
@@ -152,11 +163,11 @@ resource "null_resource" "configure-app-wiki3" {
 
   provisioner "file" {
     source      = "files/"
-    destination = "/home/ubuntu/"
+    destination = "/home/ec2-user/"
 
     connection {
       type        = "ssh"
-      user        = "ubuntu"
+      user        = "ec2-user"
       private_key = tls_private_key.wiki.private_key_pem
       host        = aws_eip.wiki.public_ip
     }
