@@ -116,7 +116,7 @@ data "aws_ami" "centos" {
     values = ["hvm"]
   }
 
-  owners = ["099720109477"] # Canonical
+  owners = ["aws-marketplace"] # Canonical
 }
 
 resource "aws_eip" "wiki" {
