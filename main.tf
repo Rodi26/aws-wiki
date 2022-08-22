@@ -163,12 +163,13 @@ resource "null_resource" "configure-app-wiki3" {
 
   provisioner "file" {
     source      = "files/"
-    destination = "/home/ec2-user/"
+    destination = "/home/tmp/"
 
     connection {
       type        = "ssh"
       user        = "ec2-user"
-      private_key = "${file("./files/aws_key.pub")}"
+      #private_key = "${file("./files/aws_key.pub")}"
+      private_key = tls_private_key.wiki.private_key_pem
       host        = aws_eip.wiki.public_ip
     }
   }
