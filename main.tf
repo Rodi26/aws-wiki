@@ -163,12 +163,12 @@ resource "null_resource" "configure-app-wiki3" {
 
   provisioner "file" {
     source      = "files/"
-    destination = "/home/centos/"
+    destination = "/home/ec2-user/"
 
     connection {
       type        = "ssh"
-      user        = "centos"
-      private_key = tls_private_key.wiki.private_key_pem
+      user        = "ec2-user"
+      private_key = file("/Users/rodolphe/.ssh/aws_key")
       host        = aws_eip.wiki.public_ip
     }
   }
