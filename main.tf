@@ -168,7 +168,7 @@ resource "null_resource" "configure-app-wiki3" {
     connection {
       type        = "ssh"
       user        = "ec2-user"
-      private_key = file("/Users/rodolphe/.ssh/aws_key")
+      private_key = "${file("/Users/rodolphe/.ssh/aws_key")}"
       host        = aws_eip.wiki.public_ip
     }
   }
