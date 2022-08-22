@@ -169,8 +169,8 @@ resource "null_resource" "configure-app-wiki3" {
       type        = "ssh"
       user        = "ec2-user"
       #private_key = "${file("./files/aws_key.pub")}"
-      private_key = tls_private_key.wiki.private_key_pem
-      public_key  = tls_private_key.wiki.public_key_openssh
+      #private_key = tls_private_key.wiki.private_key_pem
+      private_key  = tls_private_key.wiki.public_key_openssh
       host        = aws_eip.wiki.public_ip
       timeout = "2m"
       agent = false
@@ -203,8 +203,8 @@ resource "null_resource" "configure-app-wiki3" {
     connection {
       type        = "ssh"
       user        = "ec2-user"
-      private_key = tls_private_key.wiki.private_key_pem
-      public_key  = tls_private_key.wiki.public_key_openssh
+      #private_key = tls_private_key.wiki.private_key_pem
+      private_key  = tls_private_key.wiki.public_key_openssh
       host        = aws_eip.wiki.public_ip
       timeout = "2m"
       agent = false
